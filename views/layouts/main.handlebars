@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Activity 6</title>
+  <!-- Latest compiled and minified CSS -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+  
+    <link rel="stylesheet" type="text/css" href="/css/evo-calendar.min.css">
+    <!--MINIFED CSS-->
+    <link rel="stylesheet" href="/css/style.css" />
+    <!--BOXICON-->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <!-- Link Font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0"
+    />
+  
+  
+  
+  <style>
+    section {
+      width: 100%;
+      height: 100vh;
+      padding-top: 50px;
+    }
+
+    .box {
+        border: 10px solid #f0ad4e;
+        border-radius: 100px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .text-warning {
+      color: #FCD11E !important;
+    }
+
+    .text-light {
+      color: #FFFFFF !important;
+    }
+
+    img[src='/Calendar/logo.jpg'] {
+      width: 400px;
+      height: auto;
+    }
+
+    .limit {
+      width: 100%;
+      height: 70vh;
+    }
+  </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <ul class="nav navbar-nav">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#description">Description</a></li>
+      <li><a href="#calendar">Calendar</a></li>
+    </ul>
+  </nav>
+
+  <section id="home" style="background-color: black;">
+    <div class="text-center">
+      <div>
+        <img src="./images/logo.jpg">
+      </div>
+
+      <div>
+        <a href="calendar"><img src="./images/practice.jpg"></a>
+      </div>
+
+      <h3 class="text-warning">Welcome to NEUsync, the event calendar app for New Era University!</h3>
+      <h3 class="text-warning">NEUsync is your one-stop shop for staying up-to-date on all the happenings around campus.</h3>
+      <h3 class="text-warning">Never miss an important lecture, exciting sports game, or fun social event again.</h3>
+    </div>
+  </section>
+
+  <section class="limit" id="description" style="background-color:black;">
+    <div class="container-fluid text-light">
+      <h1 class="text-center">Welcome to EventSync, our friendly in-app chatbot!</h3><br />
+      <div>
+        <ul>
+        <li><h3 >Ask questions about events, deadlines, and more.</h3></li>
+        <li><h3 >Need to filter events? Simply ask our AI by category, date, or keyword to find exactly what you're looking for.</h3></li>
+        <li><h3 >Stay updated effortlessly by syncing the calendar with your personal device, ensuring you always have the latest information at your fingertips.</h3></li>
+        <li><h3 >Get personalized event recommendations tailored to your preferences, interests, and schedule.</h3></li>
+        <li><h3 >Seamlessly manage your appointments, meetings, and social gatherings with intelligent reminders and notifications.</h3></li><br />
+        <h3 class="text-center">Enjoy a hassle-free experience with intuitive navigation and user-friendly interface, designed for maximum convenience.</h3>
+      </ul>  
+    </div>
+    </div>
+
+  </section>
+
+<button id="open__nav-btn" style="display: none"></button>
+    <button id="close__nav-btn" style="display: none"></button>
+    <!--========================END OF NAV=================-->
+    <button class="chatbot-toggler" style="z-index: 999">
+      <span class="material-symbols-rounded">mode_comment</span>
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="chatbot" style="z-index: 999">
+      <div class="headers">
+        <h2></h2>
+        <span class="close-btn material-symbols-outlined">close</span>
+      </div>
+      <ul class="chatbox">
+        <li class="chat incoming">
+          <span class="material-symbols-outlined">smart_toy</span>
+          <p>Hi there 👋<br />How can I help you today?</p>
+        </li>
+      </ul>
+      <div class="chat-input">
+        <textarea
+          placeholder="What are your plans?"
+          spellcheck="false"
+          required
+        ></textarea>
+        <span id="send-btn" class="material-symbols-rounded">send</span>
+      </div>
+    </div>
+    <!--========================END OF CHAT=================-->
+
+<section id="calendar" style="background-color:black;">
+<div id="evoCalendar"></div>
+</section>
+
+
+</body>
+
+ <script src="/js/jquery.min.js"></script>
+<script src="/js/evo-calendar.min.js"></script>
+<script>
+    $(document).ready(function() {
+      
+        const eventTypes = Array('event', 'holiday', 'birthday');
+    $("#evoCalendar").evoCalendar({
+        format: "MM dd, yyyy",
+        titleFormat: "MM",
+        language: "en",
+        todayHighlight: true,
+        sidebarToggler: true,
+        eventHeaderFormat: "MM dd, yyyy",
+        firstDayOfWeek: 1,
+        calendarEvents: [{{#each eventList}}{
+            
+            id: "{{this.googleid}}",
+            name: "{{this.name}}",
+            date: "{{this.date}}",
+            type: eventTypes[Math.floor(Math.random() * eventTypes.length)],
+            
+        },{{/each}}]
+    });
+
+
+});
+</script>
+    
+    
+<!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/APIcall.js" ></script>
+    <script src="./js/script.js" ></script>
+
+<footer class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <p class="text-center" style="padding: 10px">developed bv: Cayabyab, Chris Daniel I Reyes, Simoun Irwin I Sebastian, Maureen-Mae I De Dios, Marco Angelo</p>
+  </div>
+</footer>
+
+</html>
